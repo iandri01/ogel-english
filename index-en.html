@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omah Ogel — Help Us Build a Permanent Home for 190+ Animals</title>
+<meta name="description" content="Omah Ogel has rescued and cared for 150+ dogs and 40+ cats in Indonesia since 2019. Now we need your help to build them a permanent, safe shelter — for good.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sage: #6B9E6B;
+  --sage-light: #8FB88F;
+  --sage-pale: #C8DCC8;
+  --sage-bg: #EBF2EB;
+  --sage-dark: #4A7A4A;
+  --yellow: #F5C842;
+  --yellow-dark: #E0B030;
+  --white: #FFFFFF;
+  --off-white: #F8FAF8;
+  --text-dark: #2C3E2C;
+  --text-mid: #4A5E4A;
+  --text-light: #7A907A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; color: var(--text-dark); background: var(--white); overflow-x: hidden; }
+
+/* ═══ NAVBAR ═══ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 32px;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 16px rgba(107,158,107,0.12);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.logo-text { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--sage-dark); line-height: 1.1; }
+.logo-sub { font-family: 'Nunito', sans-serif; font-size: 10px; font-weight: 300; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; font-size: 13px; font-weight: 600; color: var(--text-mid); transition: color 0.2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 2px; background: var(--sage); transition: width 0.3s; }
+.nav-links a:hover { color: var(--sage-dark); }
+.nav-links a:hover::after { width: 100%; }
+.nav-donate { background: var(--yellow) !important; color: var(--text-dark) !important; padding: 8px 20px; border-radius: 24px; font-weight: 700 !important; transition: background 0.2s !important; }
+.nav-donate:hover { background: var(--yellow-dark) !important; }
+.nav-donate::after { display: none !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--sage-dark); border-radius: 2px; }
+
+/* MOBILE MENU */
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--sage); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--white); text-decoration: none; }
+.mobile-close { position: absolute; top: 20px; right: 28px; background: none; border: none; color: white; font-size: 32px; cursor: pointer; }
+.mobile-socials { display: flex; gap: 16px; margin-top: 8px; }
+.mobile-socials a { font-size: 13px; border: 1.5px solid rgba(255,255,255,0.4); padding: 8px 16px; border-radius: 24px; font-family: 'Nunito', sans-serif; }
+
+/* ═══ HERO ═══ */
+.hero-bg {
+  position: relative; min-height: 100vh;
+  background-image: url('https://res.cloudinary.com/dyvav3opv/image/upload/f_auto,q_auto,w_1200/v1779349617/background_hg9gs2.jpg');
+  background-size: cover; background-position: center top; background-repeat: no-repeat;
+  display: flex; flex-direction: column;
+}
+.hero-content { flex: 1; display: flex; align-items: flex-end; padding: 120px 32px 64px; }
+.hero-tagline { background: rgba(0,0,0,0.48); backdrop-filter: blur(4px); padding: 28px 36px; border-radius: 12px; max-width: 580px; }
+.hero-tagline .eyebrow { font-size: 13px; color: var(--yellow); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.hero-tagline h1 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--white); line-height: 1.25; }
+.hero-tagline h1 strong { color: var(--yellow); }
+.hero-tagline p { color: rgba(255,255,255,0.85); font-size: 15px; margin-top: 12px; line-height: 1.65; }
+
+/* ═══ STATS BAR ═══ */
+.stats-bar { background: var(--sage-dark); padding: 22px 32px; }
+.stats-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 16px; }
+.stat { text-align: center; color: var(--white); }
+.stat strong { display: block; font-family: 'Playfair Display', serif; font-size: 30px; color: var(--yellow); }
+.stat span { font-size: 13px; opacity: 0.85; }
+
+/* ═══ HELPERS ═══ */
+section { padding: 72px 32px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.btn-yellow { display: inline-block; background: var(--yellow); color: var(--text-dark); padding: 12px 28px; border-radius: 32px; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s; margin-top: 16px; }
+.btn-yellow:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+.red-btn { background: #E53935 !important; color: white !important; }
+.red-btn:hover { background: #C62828 !important; }
+@media (max-width: 768px) {
+  .latar-text { text-align: center; }
+  .latar-text a { display: inline-flex; justify-content: center; margin-left: 0 !important; }
+}
+.btn-white { display: inline-block; background: var(--white); color: var(--sage-dark); padding: 12px 28px; border-radius: 32px; font-weight: 700; font-size: 13px; text-decoration: none; transition: opacity 0.2s, transform 0.2s; margin-top: 16px; }
+.btn-white:hover { opacity: 0.85; transform: translateY(-2px); }
+.section-label { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--yellow); margin-bottom: 10px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; }
+.section-title span { color: var(--sage); }
+.section-desc { font-size: 15px; line-height: 1.75; color: var(--text-mid); max-width: 680px; }
+
+/* ═══ LATAR BELAKANG ═══ */
+.latar { background: var(--sage); color: var(--white); }
+.latar .section-title span { color: var(--yellow); }
+.latar .section-desc { color: rgba(255,255,255,0.9); max-width: 100%; }
+.latar-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.feature-chip { display: flex; gap: 14px; align-items: flex-start; background: rgba(255,255,255,0.1); border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+.chip-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.chip-text { font-size: 14px; line-height: 1.6; opacity: 0.92; color: rgba(255,255,255,0.92); }
+.chip-text strong { color: var(--white); }
+.latar-video { border-radius: 12px; overflow: hidden; background: rgba(0,0,0,0.3); height: 100%; min-height: 500px; }
+.latar-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ig-btn { display: inline-flex; align-items: center; gap: 8px; background: #E1306C; color: white; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; margin-top: 12px; transition: opacity 0.2s, transform 0.2s; }
+.ig-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* ═══ TRANSFORMASI ═══ */
+.transformasi { background: var(--white); }
+.transform-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 32px; }
+.transform-card { border-radius: 10px; overflow: hidden; aspect-ratio: 1; background: var(--sage-bg); }
+.transform-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ═══ CTA REMINDER ═══ */
+.cta-reminder { background: var(--sage-bg); padding: 32px; text-align: center; }
+
+/* ═══ SHELTER DREAM ═══ */
+.shelter-dream { background: var(--white); text-align: center; }
+.shelter-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+.shelter-img-wrap { border-radius: 12px; overflow: hidden; }
+.shelter-img-wrap img { width: 100%; height: auto; max-height: 500px; object-fit: contain; display: block; }
+.shelter-caption { text-align: center; font-size: 13px; color: var(--text-light); margin-top: 8px; font-weight: 600; }
+
+/* ═══ DANA / RENCANA ═══ */
+.dana { background: var(--sage-dark); color: var(--white); }
+.dana .section-title span { color: var(--yellow); }
+.dana-hero-number { text-align: center; background: rgba(255, 221, 87, 0.22); border-radius: 16px; padding: 24px; margin-bottom: 32px; backdrop-filter: blur(4px); }
+.dana-amount { display: block; font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--yellow); }
+.dana-label { font-size: 14px; opacity: 0.85; margin-top: 6px; display: block; }
+.stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.stage-card { background: rgba(255, 221, 87, 0.22); border-radius: 12px; padding: 24px; backdrop-filter: blur(4px); }
+.stage-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--yellow); opacity: 0.6; line-height: 1; margin-bottom: 8px; }
+.stage-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.stage-price { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--yellow); margin-bottom: 16px; }
+.stage-items { list-style: none; padding: 0; }
+.stage-items li { font-size: 13px; line-height: 1.6; opacity: 0.85; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.stage-items li:last-child { border: none; }
+
+/* ═══ KEGIATAN ═══ */
+.kegiatan { background: var(--white); text-align: center; }
+.kegiatan-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 32px; }
+.activity-card { background: var(--sage-bg); border-radius: 12px; padding: 20px 14px; text-align: center; }
+.activity-icon { font-size: 32px; margin-bottom: 10px; }
+.activity-title { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+.activity-desc { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+
+/* ═══ GALLERY ═══ */
+.gallery { background: var(--sage-bg); }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px; }
+.gallery-item { border-radius: 10px; overflow: hidden; aspect-ratio: 1; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* ═══ TRANSPARANSI ═══ */
+.transparansi { background: var(--sage); color: var(--white); text-align: center; }
+.transparansi .section-title span { color: var(--yellow); }
+.trans-items { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px; }
+.trans-item { background: rgba(255,255,255,0.12); border-radius: 32px; padding: 10px 20px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; }
+
+/* ═══ LOKASI ═══ */
+.lokasi { background: var(--white); }
+.lokasi-address-card { background: var(--sage-bg); border-radius: 16px; padding: 28px 32px; max-width: 640px; margin: 24px auto 0; display: flex; gap: 20px; align-items: flex-start; }
+.lokasi-address-icon { font-size: 32px; flex-shrink: 0; }
+.lokasi-address-badge { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sage); margin-bottom: 8px; }
+.lokasi-address-main { font-size: 16px; font-weight: 700; color: var(--text-dark); line-height: 1.5; margin-bottom: 12px; }
+.lokasi-wa-link { display: inline-flex; align-items: center; gap: 6px; background: #25D366; color: white; padding: 8px 18px; border-radius: 24px; font-weight: 700; font-size: 13px; text-decoration: none; transition: opacity 0.2s; }
+.lokasi-wa-link:hover { opacity: 0.85; }
+
+/* ═══ TIMELINE ═══ */
+.timeline-section { background: var(--sage-bg); }
+.timeline { max-width: 720px; margin: 0 auto; position: relative; }
+.timeline::before { content: ''; position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: var(--sage-pale); }
+.tl-item { display: flex; gap: 24px; margin-bottom: 32px; position: relative; }
+.tl-dot { width: 48px; height: 48px; border-radius: 50%; background: var(--sage); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; position: relative; z-index: 1; }
+.tl-final .tl-dot { background: var(--yellow); color: var(--text-dark); font-size: 20px; }
+.tl-date { font-size: 12px; font-weight: 700; color: var(--sage); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.tl-title { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
+.tl-desc { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+
+/* ═══ PROGRESS VIDEO ═══ */
+.progress-section { background: var(--sage-dark); color: var(--white); }
+.progress-section .section-title { color: var(--white); }
+.progress-section .section-desc { color: rgba(255,255,255,0.8); }
+.vid-carousel { position: relative; max-width: 720px; margin: 32px auto 0; }
+.vid-stage { position: relative; border-radius: 14px; overflow: hidden; background: rgba(0,0,0,0.3); }
+.vid-slide { display: none; }
+.vid-slide.active { display: block; }
+.vid-slide video { width: 100%; display: block; max-height: 400px; object-fit: cover; }
+.vid-caption { background: rgba(0,0,0,0.6); color: white; font-size: 13px; font-weight: 600; padding: 10px 16px; }
+.vid-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); border: none; color: white; font-size: 22px; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.vid-arrow:hover { background: rgba(0,0,0,0.8); }
+.vid-arrow-left { left: 10px; }
+.vid-arrow-right { right: 10px; }
+.vid-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+.vid-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: background 0.2s; }
+.vid-dot.active { background: var(--yellow); }
+
+/* ═══ DONASI ═══ */
+.donasi { background: var(--sage); color: var(--white); text-align: center; }
+.donasi .section-title { color: var(--white); }
+.donasi .section-title span { color: var(--yellow); }
+.rekening-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 32px auto; }
+.rek-card { background: rgba(255,255,255,0.12); border-radius: 14px; padding: 24px; text-align: center; }
+.rek-bank { font-size: 14px; font-weight: 700; opacity: 0.8; margin-bottom: 8px; }
+.rek-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--yellow); margin-bottom: 6px; letter-spacing: 1px; }
+.rek-name { font-size: 13px; opacity: 0.75; }
+.wa-btn { display: inline-flex; align-items: center; gap: 10px; background: #F5C842; color: #E53935; padding: 14px 32px; border-radius: 32px; font-weight: 700; font-size: 15px; text-decoration: none; margin-top: 16px; transition: opacity 0.2s, transform 0.2s; }
+.wa-btn:hover { background: #E0B030; transform: translateY(-2px); }
+
+/* ═══ SOSMED ═══ */
+.sosmed { background: var(--sage-bg); text-align: center; }
+.sosmed-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+.sosmed-sub { font-size: 15px; color: var(--text-mid); margin-bottom: 28px; }
+.sosmed-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+.sosmed-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 32px; font-weight: 700; font-size: 14px; text-decoration: none; transition: opacity 0.2s, transform 0.2s; }
+.sosmed-link:hover { opacity: 0.85; transform: translateY(-2px); }
+.sosmed-link.ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+.sosmed-link.fb { background: #1877F2; color: white; }
+.sosmed-link.tt { background: var(--text-dark); color: white; }
+.qr-wrap { margin-top: 24px; }
+.qr-label { font-size: 13px; font-weight: 600; color: var(--text-mid); margin-bottom: 12px; }
+.qr-img { width: 140px; height: auto; display: block; margin: 0 auto; border-radius: 8px; border: 3px solid var(--sage-pale); }
+.qr-handle { font-size: 13px; font-weight: 700; color: var(--sage-dark); margin-top: 8px; }
+
+/* ═══ TESTIMONIAL SLIDER ═══ */
+.testimony { background: var(--white); overflow: hidden; }
+.testimony .section-title { color: var(--text-dark); }
+.testi-track-wrap { position: relative; max-width: 860px; margin: 40px auto 0; }
+.testi-track { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+.testi-card {
+  min-width: 100%; padding: 0 8px; box-sizing: border-box;
+}
+.testi-inner {
+  background: var(--sage-bg); border-radius: 16px; padding: 36px 40px;
+  position: relative; border-left: 5px solid var(--sage);
+}
+.testi-quote { font-size: 64px; line-height: 0.6; color: var(--sage-pale); font-family: 'Playfair Display', serif; margin-bottom: 16px; display: block; }
+.testi-text { font-size: 16px; line-height: 1.75; color: var(--text-mid); font-style: italic; margin-bottom: 24px; }
+.testi-author { display: flex; align-items: center; gap: 14px; }
+.testi-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--sage); color: white; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.testi-name { font-weight: 700; font-size: 15px; color: var(--text-dark); }
+.testi-role { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+.testi-nav { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 24px; }
+.testi-btn { background: none; border: 2px solid var(--sage-pale); color: var(--sage-dark); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.testi-btn:hover { background: var(--sage); border-color: var(--sage); color: white; }
+.testi-dots-row { display: flex; gap: 8px; }
+.testi-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sage-pale); cursor: pointer; transition: background 0.2s; border: none; }
+.testi-dot.active { background: var(--sage-dark); }
+
+/* ═══ GUESTBOOK ═══ */
+.guestbook { background: var(--sage-bg); }
+.guestbook .section-title { color: var(--text-dark); }
+.gb-form { background: var(--white); border-radius: 16px; padding: 32px; margin-bottom: 40px; box-shadow: 0 2px 20px rgba(107,158,107,0.10); }
+.gb-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.gb-form label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-light); margin-bottom: 6px; }
+.gb-form input, .gb-form textarea {
+  width: 100%; padding: 12px 16px; border: 1.5px solid var(--sage-pale); border-radius: 10px;
+  font-family: 'Nunito', sans-serif; font-size: 14px; color: var(--text-dark);
+  background: var(--off-white); transition: border-color 0.2s; resize: none;
+  outline: none;
+}
+.gb-form input:focus, .gb-form textarea:focus { border-color: var(--sage); }
+.gb-form textarea { height: 100px; }
+.gb-submit { background: var(--sage-dark); color: white; border: none; padding: 12px 32px; border-radius: 32px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; margin-top: 4px; }
+.gb-submit:hover { background: var(--sage); transform: translateY(-2px); }
+.gb-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.gb-list { display: flex; flex-direction: column; gap: 16px; }
+.gb-entry { background: var(--white); border-radius: 14px; padding: 22px 24px; border-left: 4px solid var(--sage-light); }
+.gb-entry-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 6px; }
+.gb-entry-name { font-weight: 700; font-size: 15px; color: var(--sage-dark); }
+.gb-entry-date { font-size: 12px; color: var(--text-light); font-weight: 600; }
+.gb-entry-text { font-size: 14px; line-height: 1.7; color: var(--text-mid); }
+.gb-empty { text-align: center; padding: 40px; color: var(--text-light); font-size: 15px; }
+.gb-toast { display: none; background: var(--sage-dark); color: white; border-radius: 10px; padding: 12px 20px; margin-bottom: 16px; font-size: 14px; font-weight: 600; }
+.gb-toast.show { display: block; }
+.gb-loading { text-align: center; padding: 24px; color: var(--text-light); font-size: 14px; }
+
+@media (max-width: 768px) {
+  .gb-form-row { grid-template-columns: 1fr; }
+  .testi-inner { padding: 28px 24px; }
+}
+
+/* ═══ FOOTER ═══ */
+footer { background: var(--sage-dark); color: var(--white); padding: 36px 32px 24px; text-align: center; }
+footer p { font-size: 13px; opacity: 0.75; line-height: 1.7; }
+footer span { font-weight: 700; }
+
+/* ═══ FLOATING WA ═══ */
+.floating-wa { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: white; padding: 12px 22px; border-radius: 32px; font-weight: 700; font-size: 14px; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.2); z-index: 998; transition: opacity 0.2s, transform 0.2s; }
+.floating-wa:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero-tagline h1 { font-size: 26px; }
+  .latar-inner, .stages, .rekening-grid, .transform-grid { grid-template-columns: 1fr; }
+  .kegiatan-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .shelter-imgs { grid-template-columns: 1fr; }
+  section { padding: 48px 20px; }
+  .stats-inner { gap: 20px; }
+  .transform-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/v1777893004/logo_x8jufc.jpg" alt="Omah Ogel" class="logo-img" onerror="this.style.display='none'">
+    <div>
+      <div class="logo-text">Omah Ogel</div>
+      <div class="logo-sub">Animal Rescue & Sanctuary</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#dana">Build Plan</a></li>
+    <li><a href="#progress">Progress</a></li>
+    <li><a href="#donate">Donate</a></li>
+    <li><a href="#guestbook">Guestbook</a></li>
+    <li><a href="#donate" class="nav-donate">Help Now 🐾</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
+  <a href="#story" onclick="document.getElementById('mobileMenu').classList.remove('open')">Our Story</a>
+  <a href="#dana" onclick="document.getElementById('mobileMenu').classList.remove('open')">Build Plan</a>
+  <a href="#progress" onclick="document.getElementById('mobileMenu').classList.remove('open')">Progress</a>
+  <a href="#donate" onclick="document.getElementById('mobileMenu').classList.remove('open')">Donate</a>
+  <div class="mobile-socials">
+    <a href="https://www.instagram.com/amysukmana" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/amy.sukmana" target="_blank">Facebook</a>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero-bg">
+  <div class="hero-content container">
+    <div class="hero-tagline">
+      <div class="eyebrow">🐾 190+ Animals. One Woman. One Dream.</div>
+      <h1>
+        They Survived the Streets —<br>
+        Now They Deserve a <strong style="color:#E53935;">Real Home</strong>
+      </h1>
+      <p>In Indonesia, hundreds of dogs and cats are abandoned every single day. Since 2019, Amy Sukmana has rescued and cared for over 190 of them — out of her own pocket, in rented spaces that could disappear at any time. <strong>Now we're building something permanent.</strong> And we need your help.</p>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><strong>150+</strong><span>Dogs Rescued 🐶</span></div>
+    <div class="stat"><strong>40+</strong><span>Cats in Care 🐱</span></div>
+    <div class="stat"><strong>7+ Years</strong><span>of Non-Stop Rescue</span></div>
+    <div class="stat"><strong>100+</strong><span>Successfully Adopted</span></div>
+  </div>
+</div>
+
+<!-- ═══ OUR STORY ═══ -->
+<section class="latar" id="story">
+  <div class="container latar-inner">
+    <div class="latar-text">
+      <span class="section-label">🏠 Our Story</span>
+
+      <h2 class="section-title">
+        From the Streets to <span>a Life Worth Living</span>
+      </h2>
+
+      <p class="section-desc" style="margin-bottom: 20px;">
+        <span style="color:#E53935; font-weight:700;">Omah Ogel</span> was founded by 
+        <strong style="color:#E53935;">Amy Sukmana</strong> — a remarkable woman who has devoted her life to rescuing abandoned, sick, and elderly animals in Depok, West Java, Indonesia. With no government funding and no corporate backing, she has kept this sanctuary running entirely on compassion and community support.
+      </p>
+
+      <div class="feature-chip">
+        <span class="chip-icon">🚨</span>
+        <div class="chip-text">
+          <strong>The Urgent Problem:</strong> 
+          The shelter operates in rented spaces and has relocated multiple times — causing stress and instability for the animals.
+        </div>
+      </div>
+
+      <div class="feature-chip">
+        <span class="chip-icon">🐾</span>
+        <div class="chip-text">
+          <strong>190 Lives Depending on Us:</strong> 
+          150 dogs and 40+ cats need a stable, permanent home where they can heal and thrive.
+        </div>
+      </div>
+
+      <div class="feature-chip">
+        <span class="chip-icon">🌱</span>
+        <div class="chip-text">
+          <strong>The Land is Ready:</strong> 
+          A ±1,051 m² plot in Bogor Regency has been prepared. 
+          <strong>Every dollar you donate goes directly to construction — not land purchase.</strong>
+        </div>
+      </div>
+
+      <a href="https://www.instagram.com/amysukmana" target="_blank" class="ig-btn">
+        📸 Follow Our Journey on Instagram
+      </a>
+
+      <a href="#donate" class="btn-yellow red-btn" style="margin-left: 10px;">
+        🐾 Donate Now
+      </a>
+
+    </div>
+
+    <div class="latar-video">
+      <video autoplay muted loop playsinline>
+        <source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1778395065/lv_0_20260510133311_wzpjdl.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ TRANSFORMATIONS ═══ -->
+<section class="transformasi">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="section-label">✨ Real Stories of Change</span>
+      <h2 class="section-title" style="color:var(--text-dark)">They Almost Didn't Make It. <span>Look at Them Now.</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">Every before-and-after here is a life that almost ended on the street. These photos are why we keep going — and why we can't stop now.</p>
+    </div>
+    <div class="transform-grid">
+      <div class="transform-card">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_700/v1777892221/angel_pjvsa8.png" alt="Angel" loading="lazy">
+      </div>
+      <div class="transform-card">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_700/v1777892225/hiro_ld80wi.png" alt="Hiro" loading="lazy">
+      </div>
+      <div class="transform-card">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_700/v1777892222/boba_wptzon.png" alt="Boba" loading="lazy">
+      </div>
+      <div class="transform-card">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_700/v1777892222/change_wuwija.png" alt="Change" loading="lazy">
+      </div>
+      <div class="transform-card">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_700/v1777892215/berry_kat5uq.jpg" alt="Berry" loading="lazy">
+      </div>
+      <div class="transform-card">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_700/v1777892218/emily_espyo6.png" alt="Emily" loading="lazy">
+      </div>
+      <div class="transform-card">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_700/v1777892690/nia_vu6cqx.jpg" alt="Nia" loading="lazy">
+      </div>
+      <div class="transform-card">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_700/v1777892223/billy_vdjp5j.png" alt="Billy" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA REMINDER -->
+<div class="cta-reminder">
+  <a href="#donate" class="btn-yellow red-btn">🐾 Be Part of Their Story — Donate Today</a>
+</div>
+
+<!-- ═══ SHELTER PLAN ═══ -->
+<section class="shelter-dream">
+  <div class="container">
+    <span class="section-label">🏗️ The Plan</span>
+    <h2 class="section-title" style="color:var(--text-dark)">
+      This Is What <span style="color:#E53935;">Home</span> Will Look Like
+    </h2>
+    <p class="section-desc" style="margin: 0 auto 0;">On a ±1,051 m² plot in Jl Emas, Kalongliud Village, Nanggung, Bogor Regency — we are building a safe, humane, and permanent sanctuary for every animal at Omah Ogel. With your support, this blueprint becomes real.</p>
+    <div class="shelter-imgs">
+      <div>
+        <div class="shelter-img-wrap">
+          <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_1200/v1777894207/designsaung_is5ir6.jpg" alt="Shelter Bamboo Hut Design" loading="lazy">
+        </div>
+        <p class="shelter-caption">Bamboo Shelter Hut — Design</p>
+      </div>
+      <div>
+        <div class="shelter-img-wrap">
+          <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_1200/v1777894208/lokasi_mcbvcz.jpg" alt="Site Location Map" loading="lazy">
+        </div>
+        <p class="shelter-caption">Site Location — Bogor Regency</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUILD PLAN / FUNDING ═══ -->
+<section class="dana" id="dana">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 20px;">
+      <span class="section-label">💰 Funding Breakdown</span>
+      <h2 class="section-title">Three Phases, <span>One Safe Haven</span></h2>
+    </div>
+    <div class="dana-hero-number">
+      <span class="dana-amount" style="color:#C62828;">IDR 470,000,000++ (~$29,000 USD)</span>
+      <span class="dana-label">🎯 Total Construction Budget — Fully Transparent</span>
+    </div>
+    <div class="stages">
+      <div class="stage-card">
+        <div class="stage-num">01</div>
+        <div class="stage-title">🚧 4 Bamboo Shelter Huts</div>
+        <div class="stage-price" style="color:#E53935;">IDR 74,000,000 (~$4,500)</div>
+        <ul class="stage-items">
+          <li>4 bamboo huts, each 5×8 m²</li>
+          <li>IDR 18,500,000 per unit × 4</li>
+          <li>Target: IDR 74,000,000</li>
+          <li>Raised: IDR 74,000,000</li>
+          <li>✅ Fully Funded — Construction Started 05/05/26</li>
+        </ul>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">02</div>
+        <div class="stage-title">🏠 Perimeter Fence & Staff Kennel House</div>
+        <div class="stage-price" style="color:#E53935;">IDR 332,000,000 (~$20,500)</div>
+        <ul class="stage-items">
+          <li>Staff kennel house 8×12 m² = IDR 265,000,000</li>
+          <li>Construction labor = IDR 42,000,000</li>
+          <li>Bamboo fencing labor = IDR 25,000,000</li>
+          <li>Target: IDR 332,000,000</li>
+          <li>Raised: IDR 169,989,500</li>
+          <li>Still Needed: IDR 162,010,500 (~$10,000)</li>
+          <li>🔓 Donations Still Open — Started 13 May 2026</li>
+        </ul>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">03</div>
+        <div class="stage-title">⚡ Utilities & Infrastructure</div>
+        <div class="stage-price" style="color:#E53935;">IDR 64,000,000 (~$3,900)</div>
+        <ul class="stage-items">
+          <li>Electrical installation & lighting = IDR 20,000,000</li>
+          <li>2 water wells = IDR 24,000,000</li>
+          <li>4 septic tanks = IDR 20,000,000</li>
+          <li>Target: IDR 64,000,000</li>
+          <li>Raised: IDR 64,000,000</li>
+          <li>✅ Fully Funded — Wells & Electricity Installed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT WE DO ═══ -->
+<section class="kegiatan">
+  <div class="container">
+    <span class="section-label">🐾 What We Do Every Day</span>
+    <h2 class="section-title" style="color:var(--text-dark)">Real Work. <span>Real Impact.</span></h2>
+    <p class="section-desc" style="margin: 0 auto;">For over 7 years, Omah Ogel has been on the ground — doing the unglamorous, exhausting, deeply necessary work of animal rescue in Indonesia.</p>
+    <div class="kegiatan-grid">
+      <div class="activity-card">
+        <div class="activity-icon">🚑</div>
+        <div class="activity-title">Emergency Rescue</div>
+        <div class="activity-desc">Saving abandoned, injured, elderly, and newborn animals from the streets</div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">💊</div>
+        <div class="activity-title">Medical Care</div>
+        <div class="activity-desc">Intensive treatment and full recovery care for every animal that comes in</div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">💉</div>
+        <div class="activity-title">Spay, Neuter & Vaccinate</div>
+        <div class="activity-desc">Ongoing programs to keep animals healthy and control the stray population</div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">🏡</div>
+        <div class="activity-title">Adoption Program</div>
+        <div class="activity-desc">Thorough screening to ensure every animal goes to a safe, loving home</div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">🍼</div>
+        <div class="activity-title">Neonatal Care</div>
+        <div class="activity-desc">Hand-raising orphaned puppies and kittens — bottle-fed around the clock</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gallery">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="section-label">📸 In the Shelter</span>
+      <h2 class="section-title" style="color:var(--text-dark)">Moments Worth <span>Fighting For</span></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_900/v1777897614/amy1_mzaey1.jpg" alt="Amy" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dyvav3opv/image/upload/f_auto,q_auto,w_900/v1779264183/amy_vmo2bc.jpg" alt="Amy" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dyvav3opv/image/upload/f_auto,q_auto,w_900/v1778912360/IMG-20260515-WA0018_ukxdsn.jpg" alt="Shelter Progress" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_900/v1777897615/amy3_lr88bw.jpg" alt="Amy" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_900/v1777897971/amy4_en3jip.jpg" alt="Amy" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_900/v1777897617/amy5_hmuuyc.jpg" alt="Amy" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/f_auto,q_auto,w_900/v1777897618/amy6_oa52ou.jpg" alt="Amy" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://res.cloudinary.com/dyvav3opv/image/upload/f_auto,q_auto,w_900/v1779694275/IMG-20260525-WA0005_wfjgq6.jpg" alt="Amy" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRANSPARENCY ═══ -->
+<section class="transparansi">
+  <div class="container">
+    <span class="section-label">🔍 Our Commitment</span>
+    <h2 class="section-title">Your Donation Is <span>100% Transparent</span></h2>
+    <p class="section-desc" style="margin: 0 auto; color: rgba(255,255,255,0.85);">We document and share every rupiah. You'll always know exactly where your money goes and what it builds.</p>
+    <div class="trans-items">
+      <div class="trans-item">📸 Regular Photo & Video Updates</div>
+      <div class="trans-item">📊 Public Expense Reports</div>
+      <div class="trans-item">📱 Updates Across All Social Media</div>
+      <div class="trans-item">🎥 YouTube & TikTok Build Diaries</div>
+      <div class="trans-item">🤝 Open Communication with Donors</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LOCATION ═══ -->
+<section class="lokasi">
+  <div class="container" style="text-align:center">
+    <span class="section-label">📍 Where We Are</span>
+    <h2 class="section-title" style="color:var(--text-dark)">Find <span>Us</span></h2>
+    <div class="lokasi-address-card">
+      <div class="lokasi-address-icon">🏠</div>
+      <div class="lokasi-address-body">
+        <div class="lokasi-address-badge">Current Temporary Shelter</div>
+        <div class="lokasi-address-main">Jl. Tupai Raya Blok C2 No.2-3<br>Palem Ganda Asri, Limo, Depok, West Java, Indonesia</div>
+        <a href="https://wa.me/6287762022232" target="_blank" class="lokasi-wa-link">💬 WhatsApp: +62 877-6202-2232</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TIMELINE ═══ -->
+<section class="timeline-section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 40px;">
+      <span class="section-label">📅 Construction Timeline</span>
+      <h2 class="section-title" style="color:var(--text-dark)">Step by Step <span>to Their New Home</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">With full funding, the build is underway — and we're watching it rise, week by week.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot">1</div>
+        <div class="tl-content">
+          <div class="tl-date">April 2026</div>
+          <div class="tl-title">Land Clearing & Preparation</div>
+          <div class="tl-desc">Clearing vegetation, undergrowth, and trees to prepare the site for construction.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2</div>
+        <div class="tl-content">
+          <div class="tl-date">May – Early June 2026</div>
+          <div class="tl-title">Phase 1 · 4 Bamboo Huts, Perimeter Fence & Utilities</div>
+          <div class="tl-desc">±6 weeks of construction. Electricity, water wells, and septic tanks included.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">3</div>
+        <div class="tl-content">
+          <div class="tl-date">Mid May – Late June 2026</div>
+          <div class="tl-title">Phase 2 · Staff Kennel House & Finishing</div>
+          <div class="tl-desc">Construction of the 8×12 m² staff and kennel house — the heart of the shelter.</div>
+        </div>
+      </div>
+      <div class="tl-item tl-final">
+        <div class="tl-dot">🏡</div>
+        <div class="tl-content">
+          <div class="tl-date">June 2026</div>
+          <div class="tl-title">Omah Ogel Opens Its Permanent Doors!</div>
+          <div class="tl-desc">11 June 2026 — all animals move to their permanent home. End of June — kennel house ready for full operations.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROGRESS VIDEOS ═══ -->
+<section class="progress-section" id="progress">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 32px;">
+      <span class="section-label" style="color:var(--yellow)">🏡 Live Updates</span>
+      <h2 class="section-title">Watch It <span style="color:var(--yellow)">Being Built</span></h2>
+      <p class="section-desc" style="margin: 12px auto 0; color: rgba(255,255,255,0.8);">Every brick, every post, every moment — documented for you. Because you deserve to see exactly what your support is building.</p>
+    </div>
+    <div class="vid-carousel" id="vidCarousel">
+      <div class="vid-stage" id="vidStage">
+        <button class="vid-arrow vid-arrow-left" id="vidPrev">&#8592;</button>
+
+        <div class="vid-slide active">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/dk9txys8r/video/upload/v1780819105/lv_0_20260607145103_gpl30h.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Update: 06 Jun 2026 — Latest Build Progress</div>
+        </div>
+
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/dk9txys8r/video/upload/v1780819130/lv_0_20260607144737_pigu5v.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Update: 06 Jun 2026 — Latest Build Progress</div>
+        </div>
+
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780316351/lv_0_20260601191817_jugcub.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Update: 01 Jun 2026 — Kennel House & Toilet Progress</div>
+        </div>
+
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780316244/lv_0_20260601191140_gapeai.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Update: 01 Jun 2026 — Kennel House & Toilet Progress</div>
+        </div>
+
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780316238/lv_0_20260601191331_o0gukz.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Update: 01 Jun 2026 — Kennel House & Toilet Progress</div>
+        </div>
+
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1779807819/lv_0_20260526215515_n2zbbu.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Update: 26 May 2026 — Kennel House Framing</div>
+        </div>
+
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1779260355/lv_0_20260520135646_egf9ob.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Update: 18 May 2026 — Huts Rising & Fencing Installed</div>
+        </div>
+
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1779260604/VID-20260516-WA0016_f7ouce.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Update: 17 May 2026 — First Shelter Hut Completed!</div>
+        </div>
+
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1778575751/lv_0_20260512154137_xkdsw2.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Update: 11 May 2026 — Well Drilling Underway</div>
+        </div>
+
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1778575471/lv_0_20260512152700_scwkux.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Update: 12 May 2026 — Hut Construction & Perimeter Fence</div>
+        </div>
+
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1778573933/VID-20260512-WA0007_hx0mqv.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Update: 12 May 2026 — Full Perimeter Fence Installed</div>
+        </div>
+
+        <button class="vid-arrow vid-arrow-right" id="vidNext">&#8594;</button>
+      </div>
+      <div class="vid-dots" id="vidDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DONATE ═══ -->
+<section class="donasi" id="donate">
+  <div class="container">
+    <span class="section-label">❤️ Time to Act</span>
+    <h2 class="section-title">
+      Every Dollar You Give =
+      <span style="color:#E53935;">One Life More Secure</span>
+    </h2>
+    <p class="section-desc" style="margin: 0 auto; color: rgba(255,255,255,0.85);">No donation is too small. Thousands of animal lovers around the world have already helped keep Omah Ogel alive. Now we're asking you to help us go further — and make this home permanent, forever.</p>
+
+    <div class="rekening-grid">
+      <div class="rek-card">
+        <div class="rek-bank" style="color:#F5C842;">🏦 BCA (Indonesia)</div>
+        <div class="rek-num" style="color:#E53935;">0670021424</div>
+        <div class="rek-name" style="color:#F5C842;">a/n Lala Karmila</div>
+      </div>
+      <div class="rek-card">
+        <div class="rek-bank" style="color:#F5C842;">🏦 Mandiri (Indonesia)</div>
+        <div class="rek-num" style="color:#E53935;">1010005462278</div>
+        <div class="rek-name" style="color:#F5C842;">a/n Lala Karmila</div>
+      </div>
+      <div class="rek-card" style="cursor:pointer;" onclick="window.open('https://www.paypal.me/amysukmana29','_blank')">
+        <div class="rek-bank" style="color:#F5C842;">💳 PayPal</div>
+        <div class="rek-num" style="font-size:15px; color:#E53935;">paypal.me/amysukmana29</div>
+        <div class="rek-name" style="color:#F5C842; margin-bottom:12px;">International Donations Welcome</div>
+        <a href="https://www.paypal.me/amysukmana29" target="_blank" style="display:inline-block; background:#0070BA; color:white; padding:8px 20px; border-radius:24px; font-weight:700; font-size:13px; text-decoration:none; transition:opacity 0.2s;">Donate via PayPal →</a>
+      </div>
+    </div>
+
+    <a href="https://wa.me/6287762022232" target="_blank" class="wa-btn">
+      💬 Get in Touch with Amy
+    </a>
+    <p style="color: rgba(255,255,255,0.5); margin-top: 12px; font-size: 13px;">
+      Amy Sukmana — Founder, Omah Ogel
+    </p>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimony" id="testimony">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="section-label">💛 What People Say About Amy</span>
+      <h2 class="section-title">From the People Who <span>Know Her Best</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">Friends, volunteers, and fellow animal lovers share their experience with the woman behind Omah Ogel.</p>
+    </div>
+    <div class="testi-track-wrap">
+      <div class="testi-track" id="testiTrack">
+
+        <div class="testi-card">
+          <div class="testi-inner">
+            <span class="testi-quote">"</span>
+            <p class="testi-text">I've known Amy for years, and what she does is nothing short of extraordinary. She gives everything — her time, her money, her heart — to animals that the world forgot. I've never met anyone with such pure, unconditional love for creatures who can't speak for themselves.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">R</div>
+              <div>
+                <div class="testi-name">Rina Kusuma</div>
+                <div class="testi-role">Close Friend & Volunteer, Jakarta</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-inner">
+            <span class="testi-quote">"</span>
+            <p class="testi-text">When my dog was injured and I had nowhere to turn, Amy helped us immediately — no questions, no fees, just pure kindness. She has this quiet strength that makes you believe everything will be okay. Omah Ogel wouldn't exist without that energy.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">D</div>
+              <div>
+                <div class="testi-name">Dian Pratiwi</div>
+                <div class="testi-role">Adopter & Long-time Supporter</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-inner">
+            <span class="testi-quote">"</span>
+            <p class="testi-text">I volunteered at Omah Ogel for three months and it changed my life. Amy works from sunrise to midnight, 7 days a week, never complaining. She treats every single animal as if it were the most important being in the world. That's rare. That's real.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">B</div>
+              <div>
+                <div class="testi-name">Budi Santoso</div>
+                <div class="testi-role">Former Volunteer, Bogor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-inner">
+            <span class="testi-quote">"</span>
+            <p class="testi-text">Amy rescued a paralyzed dog that three vets had already given up on. She nursed him back to health over five months with zero budget. He's now living with a lovely family in Bandung. That's the kind of person she is — she simply refuses to give up.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">S</div>
+              <div>
+                <div class="testi-name">Sari Wulandari</div>
+                <div class="testi-role">Fellow Rescue Activist, Depok</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-inner">
+            <span class="testi-quote">"</span>
+            <p class="testi-text">We adopted two cats from Omah Ogel last year. Amy spent two hours with us making sure we were the right fit — she cares that much. Six months later she still checks in on our cats. The love doesn't stop when they leave the shelter. It follows them home.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">F</div>
+              <div>
+                <div class="testi-name">Farhan & Mei Lim</div>
+                <div class="testi-role">Adopters, Singapore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="testi-nav">
+        <button class="testi-btn" id="testiPrev">&#8592;</button>
+        <div class="testi-dots-row" id="testiDots"></div>
+        <button class="testi-btn" id="testiNext">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GUESTBOOK ═══ -->
+<section class="guestbook" id="guestbook">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 36px;">
+      <span class="section-label">📖 Guestbook</span>
+      <h2 class="section-title">Leave a <span>Message of Love</span></h2>
+      <p class="section-desc" style="margin: 0 auto;">Every message here is a reminder that kindness knows no borders. Leave your name (real or made-up), and a few words for Amy, the animals, or anyone who stumbles across this page.</p>
+    </div>
+
+    <div class="gb-form">
+      <div id="gbToast" class="gb-toast">🐾 Thank you! Your message has been posted.</div>
+      <div class="gb-form-row">
+        <div>
+          <label for="gbName">Your Name (or alias) *</label>
+          <input type="text" id="gbName" placeholder="e.g. Dog Lover from Portland" maxlength="60">
+        </div>
+        <div>
+          <label for="gbCountry">Country / City</label>
+          <input type="text" id="gbCountry" placeholder="e.g. New York, USA" maxlength="60">
+        </div>
+      </div>
+      <div>
+        <label for="gbMsg">Your Message *</label>
+        <textarea id="gbMsg" placeholder="Write something kind — for Amy, for the animals, or for anyone reading this..." maxlength="500"></textarea>
+      </div>
+      <button class="gb-submit" id="gbSubmit" onclick="submitGuestbook()">✉️ Post My Message</button>
+    </div>
+
+    <div id="gbListWrap">
+      <div class="gb-loading" id="gbLoading">Loading messages...</div>
+      <div class="gb-list" id="gbList" style="display:none"></div>
+      <div class="gb-empty" id="gbEmpty" style="display:none">🐾 No messages yet — be the first to leave one!</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOCIAL MEDIA ═══ -->
+<section class="sosmed">
+  <div class="container">
+    <h3 class="sosmed-title">Follow Their Journey 🐾</h3>
+    <p class="sosmed-sub">Daily rescue stories, build updates, and full donation transparency — across every platform</p>
+    <div class="sosmed-links">
+      <a href="https://www.instagram.com/amysukmana?igsh=eHozZjRoYW9nc2V3" target="_blank" class="sosmed-link ig">📸 Instagram @amysukmana</a>
+      <a href="https://www.facebook.com/amy.sukmana" target="_blank" class="sosmed-link fb">👍 Facebook — Amy Sukmana</a>
+      <a href="https://www.tiktok.com/@bogelrafaelbebendutsukm7" target="_blank" class="sosmed-link tt">🎵 TikTok — Omah Ogel</a>
+    </div>
+
+    <!-- Activity videos -->
+    <div class="vid-carousel" id="actCarousel" style="max-width:720px; margin: 0 auto 32px;">
+      <div class="vid-stage" id="actStage">
+        <button class="vid-arrow vid-arrow-left" id="actPrev">&#8592;</button>
+        <div class="vid-slide active">
+          <video muted loop playsinline preload="auto">
+            <source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1778385528/VID-20260510-WA0000_bmvh3i.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Rescue story: 9 dogs abandoned when their 70-year-old owner was rushed to hospital</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1776054005/VID-20260413-WA0001_ytejic.mp4" type="video/mp4">
+          </video>
+          <div class="vid-caption">🎬 Daily life at Omah Ogel — moments of joy, one rescue at a time</div>
+        </div>
+        <button class="vid-arrow vid-arrow-right" id="actNext">&#8594;</button>
+      </div>
+      <div class="vid-dots" id="actDots"></div>
+    </div>
+
+    <div class="qr-wrap">
+      <p class="qr-label">Scan to Follow on Instagram</p>
+      <a href="https://www.instagram.com/amysukmana" target="_blank">
+        <img src="https://res.cloudinary.com/dvigvyoxo/image/upload/q_auto/f_auto/v1779687244/Gemini_Generated_Image_vqzt12vqzt12vqzt_nxphvj.png" alt="QR Instagram" class="qr-img" onerror="this.style.display='none'">
+      </a>
+      <p class="qr-handle">@amysukmana</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p>© 2026 <span>Omah Ogel</span> · Founded by Amy Sukmana · Depok, West Java, Indonesia 🐾</p>
+  <p style="margin-top:8px">Built with ❤️ for every animal that deserves a life worth living</p>
+</footer>
+
+<!-- FLOATING WA DISABLED
+<a href="https://wa.me/6287762022232" target="_blank" class="floating-wa">💬 Contact Amy</a>
+-->
+
+<script>
+function initCarousel(stageId, prevId, nextId, dotsId, autoPlay) {
+  const stage = document.getElementById(stageId);
+  if (!stage) return;
+  const slides = stage.querySelectorAll('.vid-slide');
+  const dotsContainer = document.getElementById(dotsId);
+  let current = 0;
+  let autoTimer = null;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'vid-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(n) {
+    const oldVideo = slides[current].querySelector('video');
+    if (oldVideo) { oldVideo.pause(); oldVideo.currentTime = 0; }
+    slides[current].classList.remove('active');
+    dotsContainer.children[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dotsContainer.children[current].classList.add('active');
+    const newVideo = slides[current].querySelector('video');
+    if (newVideo) newVideo.play().catch(() => {});
+  }
+
+  document.getElementById(prevId).addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  document.getElementById(nextId).addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+  function startAuto() {
+    if (!autoPlay) return;
+    autoTimer = setInterval(() => goTo(current + 1), autoPlay);
+  }
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+  startAuto();
+
+  let touchStartX = 0;
+  stage.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetAuto(); }
+  }, { passive: true });
+
+  const firstVideo = slides[0].querySelector('video');
+  if (firstVideo) firstVideo.play().catch(() => {});
+}
+
+initCarousel('vidStage', 'vidPrev', 'vidNext', 'vidDots', 5000);
+initCarousel('actStage', 'actPrev', 'actNext', 'actDots', 7000);
+
+// ═══ TESTIMONIAL SLIDER ═══
+(function() {
+  const track = document.getElementById('testiTrack');
+  const cards = track.querySelectorAll('.testi-card');
+  const dotsRow = document.getElementById('testiDots');
+  let cur = 0, autoT = null;
+
+  cards.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'testi-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Go to testimonial ' + (i+1));
+    d.onclick = () => { goTesti(i); resetTesti(); };
+    dotsRow.appendChild(d);
+  });
+
+  function goTesti(n) {
+    cur = (n + cards.length) % cards.length;
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    dotsRow.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+  }
+
+  document.getElementById('testiPrev').onclick = () => { goTesti(cur - 1); resetTesti(); };
+  document.getElementById('testiNext').onclick = () => { goTesti(cur + 1); resetTesti(); };
+
+  function startTesti() { autoT = setInterval(() => goTesti(cur + 1), 5000); }
+  function resetTesti() { clearInterval(autoT); startTesti(); }
+
+  // Touch support
+  let tx = 0;
+  track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const d = tx - e.changedTouches[0].clientX;
+    if (Math.abs(d) > 40) { goTesti(d > 0 ? cur + 1 : cur - 1); resetTesti(); }
+  }, { passive: true });
+
+  startTesti();
+})();
+
+// ═══ GUESTBOOK ═══
+var GB_KEY = 'omahogel_guestbook_v1';
+
+function gbGetAll() {
+  try { return JSON.parse(localStorage.getItem(GB_KEY) || '[]'); } catch(e) { return []; }
+}
+
+function gbSaveAll(arr) {
+  try { localStorage.setItem(GB_KEY, JSON.stringify(arr)); } catch(e) {}
+}
+
+function gbFormatDate(iso) {
+  var d = new Date(iso);
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function gbRender() {
+  var list = document.getElementById('gbList');
+  var empty = document.getElementById('gbEmpty');
+  var loading = document.getElementById('gbLoading');
+  var entries = gbGetAll();
+  loading.style.display = 'none';
+  if (!entries.length) {
+    list.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  list.style.display = 'flex';
+  list.innerHTML = entries.slice().reverse().map(function(e) {
+    var loc = e.country ? ' · ' + e.country : '';
+    return '<div class="gb-entry">' +
+      '<div class="gb-entry-header">' +
+        '<span class="gb-entry-name">🐾 ' + e.name + loc + '</span>' +
+        '<span class="gb-entry-date">' + gbFormatDate(e.date) + '</span>' +
+      '</div>' +
+      '<div class="gb-entry-text">' + e.message + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function submitGuestbook() {
+  var nameEl = document.getElementById('gbName');
+  var countryEl = document.getElementById('gbCountry');
+  var msgEl = document.getElementById('gbMsg');
+  var btn = document.getElementById('gbSubmit');
+  var toast = document.getElementById('gbToast');
+
+  var name = nameEl.value.trim();
+  var country = countryEl.value.trim();
+  var message = msgEl.value.trim();
+
+  if (!name) { nameEl.focus(); nameEl.style.borderColor = '#E53935'; return; }
+  if (!message) { msgEl.focus(); msgEl.style.borderColor = '#E53935'; return; }
+
+  nameEl.style.borderColor = '';
+  msgEl.style.borderColor = '';
+  btn.disabled = true;
+  btn.textContent = 'Posting...';
+
+  var entry = { name: name, country: country, message: message, date: new Date().toISOString() };
+  var all = gbGetAll();
+  all.push(entry);
+  gbSaveAll(all);
+
+  setTimeout(function() {
+    nameEl.value = '';
+    countryEl.value = '';
+    msgEl.value = '';
+    btn.disabled = false;
+    btn.textContent = '✉️ Post My Message';
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3500);
+    gbRender();
+  }, 400);
+}
+
+// Init guestbook on load
+gbRender();
+</script>
+</body>
+</html>
